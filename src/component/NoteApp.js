@@ -48,7 +48,7 @@ class NoteApp extends React.Component {
   // fitur delete selesai
   onDelete(id) {
     Swal.fire({
-      title: "Anda yakin untuk menghapus buku ini?",
+      title: "Anda yakin untuk menghapus Catatan ini?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
