@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid black;
+}
+
+.nav-logo {
+  margin-bottom: 20px;
+}
+
+.nav-logo h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-search {
+  width: 300px;
+  height: 100%;
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.nav-search i {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.nav-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* MAIN */
+.main-note {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  gap: 20px;
+}
+
+.output-note {
+  margin-bottom: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.output-note:last-child {
+  margin-top: 30px;
+}
+
+.output-note__heading {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.output-note__heading .add-button {
+  width: 33px;
+  height: 33px;
+  outline: none;
+  border: none;
+  background-color: #ffc23c;
+  cursor: pointer;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 300;
+  transition: 0.5s all;
+}
+
+.output-note__heading .add-button:hover {
+  background-color: #ffae00;
+}
+.output-note__heading .add-button:active {
+  background-color: #f8cb6b;
+}
+
+.output-note__heading h2 {
+  font-size: 28px;
+}
+
+.output-note__empty {
+  padding-left: 25px;
+}
+
+.output-note__content {
+  padding: 0 20px;
+  display: flex;
+  height: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: auto;
+}
+
+.output-note__content .note-item__body {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px 8px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.output-note__content .note-item__body .judul {
+  font-size: 1.3em;
+  padding-left: 5px;
+}
+
+.output-note__content .note-item__body .tanggal {
+  font-size: 0.7em;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+.output-note__content .note-item__body .text {
+  font-size: 1em;
+  padding-left: 5px;
+  margin-top: 8px;
+}
+
+.output-note__content .note-item__body .note-item__button {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.note-item__button .delete,
+.note-item__button .archive {
+  width: 50%;
+  height: 25px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.note-item__button .delete:hover,
+.note-item__button .archive:hover {
+  background-color: rgb(150, 150, 150);
+  color: #fff;
+}
+
+.note-item__button .delete:active,
+.note-item__button .archive:active {
+  outline: 2px solid;
+  outline-color: #fff;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.modal h2 {
+  font-size: 1.5em;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.input-form .character-text {
+  text-align: end;
+  font-size: 0.8em;
+}
+.input-form label {
+  font-weight: 500;
+}
+.input-form input {
+  padding: 3px 5px;
+  outline: none;
+}
+.input-form textarea {
+  margin-top: 10px;
+  padding: 3px 5px;
+  outline: none;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+}
+
+.input-form .add-note {
+  margin-top: 10px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.input-form .close-button {
+  margin-top: 10px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.show {
+  display: flex;
+}
+
+@media (max-width: 775px) {
+  .output-note__content {
+    max-width: 350px;
+  }
+  .modal {
+    width: 80%;
+  }
+  .output-note__heading {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* .output-note__content {
+    max-width: 300px;
+  }
+  .output-note__content .note-item__body {
+    width: 250px;
+  } */
+  .main-note {
+    padding: 10px 0;
+  }
+  .modal {
+    width: 80%;
+  }
+  .note-item__title {
+    font-size: 15px;
+  }
+  .output-note__heading {
+    width: 320px;
+  }
+}
