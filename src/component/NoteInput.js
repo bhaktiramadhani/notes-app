@@ -1,4 +1,5 @@
 import React from "react";
+import autoBind from "auto-bind";
 
 class NoteInput extends React.Component {
   constructor(props) {
@@ -9,11 +10,7 @@ class NoteInput extends React.Component {
       title: "",
       body: "",
     };
-
-    this.handleTitle = this.handleTitle.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBody = this.handleBody.bind(this);
+    autoBind(this);
   }
   handleTitle(event) {
     event.target.value = event.target.value.slice(0, 50);

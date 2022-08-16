@@ -3,6 +3,7 @@ import { dataDate, noteData } from "../utils/data";
 import Navigation from "./Navigation";
 import MainNote from "./MainNote";
 import Swal from "sweetalert2";
+import autoBind from "auto-bind";
 
 class NoteApp extends React.Component {
   constructor(props) {
@@ -13,13 +14,7 @@ class NoteApp extends React.Component {
       notesSearch: [],
       searchTitle: "",
     };
-
-    this.onAddNote = this.onAddNote.bind(this);
-    this.onDelete = this.onDelete.bind(this);
-    this.onArchived = this.onArchived.bind(this);
-    this.onBack = this.onBack.bind(this);
-    this.onSearchChangeHandler = this.onSearchChangeHandler.bind(this);
-    this.searchTitleHandler = this.searchTitleHandler.bind(this);
+    autoBind(this);
   }
 
   onAddNote({ title, body }) {
