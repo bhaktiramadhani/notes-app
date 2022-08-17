@@ -245,6 +245,19 @@ header {
   display: flex;
 }
 
+.modal-container.show .modal {
+  animation: anim 0.5s;
+}
+
+@keyframes anim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 775px) {
   .output-note__content {
     max-width: 350px;
